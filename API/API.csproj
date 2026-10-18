@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abtracciones\Abtracciones.csproj" />
+    <ProjectReference Include="..\Abtracciones\Abstracciones.csproj" />
     <ProjectReference Include="..\Flujo\Flujo.csproj" />
   </ItemGroup>
 
