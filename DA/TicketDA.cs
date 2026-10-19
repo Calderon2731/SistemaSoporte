@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
-using Abstracciones.Interfaces;
+using Abtracciones.Interfaces;
 using Abstracciones.Modelos;
 
 namespace DA
