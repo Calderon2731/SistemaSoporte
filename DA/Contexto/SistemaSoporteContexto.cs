@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Abtracciones.Modelos;
+using Abstracciones.Modelos;
 namespace DA.Contexto
 {
     //sesion de trabajo contra la base de datos que vamos a crear SistemaSoporte

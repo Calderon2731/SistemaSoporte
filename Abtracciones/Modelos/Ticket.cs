@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abtracciones.Modelos
+namespace Abstracciones.Modelos
 {
     public enum PrioridadTicket
     {
@@ -13,6 +13,7 @@ namespace Abtracciones.Modelos
 
     public enum EstadoTicket
     {
+        Resuelto,
         Abierto,
         EnProceso,
         Cerrado

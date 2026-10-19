@@ -1,4 +1,4 @@
-﻿using Abtracciones.Modelos;
+﻿using Abstracciones.Modelos;
 
 namespace Abtracciones.Interfaces
 {

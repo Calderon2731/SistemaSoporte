@@ -2,7 +2,7 @@ using Abtracciones.Interfaces;
 using Scalar.AspNetCore;
 using DA;
 using Flujo;
-using Abtracciones.Modelos;
+using Abstracciones.Modelos;
 using DA.Contexto;
 using Microsoft.EntityFrameworkCore;
 

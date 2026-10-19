@@ -1,5 +1,5 @@
 ﻿using Abtracciones.Interfaces;
-using Abtracciones.Modelos;
+using Abstracciones.Modelos;
 using DA.Contexto;
 using Microsoft.EntityFrameworkCore;
 

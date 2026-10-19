@@ -1,4 +1,4 @@
-﻿using Abtracciones.Modelos;
+﻿using Abstracciones.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,9 +12,9 @@ namespace Abstracciones.Modelos
         public PrioridadTicket? Prioridad { get; set; }
         public int? ClienteId { get; set; }
 
-        public DateTime desde { get; set; }
+        public DateTime? Desde { get; set; }
 
-        public DateTime Hasta { get; set; }
+        public DateTime? Hasta { get; set; }
 
         public string? Q { get; set; }
 

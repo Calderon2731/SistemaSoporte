@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
-using Abtracciones.Modelos;
+using Abstracciones.Modelos;
 
 namespace Abstracciones.Modelos
 {

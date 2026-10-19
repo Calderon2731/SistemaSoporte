@@ -1,4 +1,4 @@
-﻿using Abtracciones.Modelos;
+﻿using Abstracciones.Modelos;
 using System.ComponentModel.DataAnnotations;
 using System;
 using System.Collections.Generic;

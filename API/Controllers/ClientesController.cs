@@ -1,4 +1,4 @@
-﻿using Abtracciones.Modelos;
+﻿using Abstracciones.Modelos;
 using Abtracciones.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 

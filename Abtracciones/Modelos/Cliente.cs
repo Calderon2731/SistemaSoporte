@@ -1,6 +1,6 @@
 ﻿
 
-namespace Abtracciones.Modelos
+namespace Abstracciones.Modelos
 {
     public class Cliente
     {
