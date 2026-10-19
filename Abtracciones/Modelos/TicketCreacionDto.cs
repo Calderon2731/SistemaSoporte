@@ -14,7 +14,7 @@ namespace Abstracciones.Modelos
         public string Titulo { get; set; }
 
         [Required(ErrorMessage = "La descripción es obligatoria")]
-        [StringLength(10, ErrorMessage = "La descripción debe tener al menos 10  caracteres")]
+        [StringLength(100, ErrorMessage = "La descripción debe tener al menos 10  caracteres")]
         public string Descripcion { get; set; }
 
         [Required(ErrorMessage = "La prioridad es obligatoria")]
@@ -25,6 +25,6 @@ namespace Abstracciones.Modelos
         public int? ClienteId { get; set; }
 
         [Range(1, int.MaxValue, ErrorMessage = "El AgenteId debe ser un número entero mayor o igual a 1.")]
-        public int AgenteId { get; set; }
+        public int? AgenteId { get; set; }
     }
 }

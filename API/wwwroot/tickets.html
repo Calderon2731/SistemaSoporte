@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Tickets</title>
+</head>
+<body>
+    <h1>Tickets</h1>
+
+    <div>
+        <label>Estado:</label>
+        <select id="filtro">
+            <option value="">Todos</option>
+            <option value="Abierto">Abierto</option>
+            <option value="EnProceso">EnProceso</option>
+            <option value="Resuelto">Resuelto</option>
+            <option value="Cerrado">Cerrado</option>
+        </select>
+    </div>
+    <br />
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Título</th>
+                <th>Prioridad</th>
+                <th>Estado</th>
+                <th>Cliente</th>
+            </tr>
+        </thead>
+        <tbody id="tabla"></tbody>
+    </table>
+    <br />
+
+    <div>
+        <button id="btnAnt">Anterior</button>
+        <span id="txtPagina">1</span>
+        <button id="btnSig">Siguiente</button>
+    </div>
+
+    <script>
+                       
+                let pagina = 1;
+                const tamano = 5;
+
+                function cargar() {
+                    const filtro = document.getElementById('filtro');
+                    const estado = filtro ? filtro.value : '';
+
+                    let url = `/api/tickets?pagina=${pagina}&tamano=${tamano}`;
+                    if (estado) {
+                        url += `&estado=${estado}`;
+                    }
+
+                    fetch(url)
+                        .then(r => r.json())
+                        .then(tickets => {
+                            const tbody = document.getElementById('tabla');
+                            if (tbody) {
+                                tbody.innerHTML = '';
+
+                                tickets.forEach(t => {
+                                    const tr = document.createElement('tr');
+                                    tr.innerHTML = `
+                                        <td>${t.codigo}</td>
+                                        <td>${t.titulo}</td>
+                                        <td>${t.prioridad}</td>
+                                        <td>${t.estado}</td>
+                                        <td>${t.clienteId}</td>
+                                    `;
+                                    tbody.append(tr);
+                                });
+                            }
+
+                            const txtPagina = document.getElementById('txtPagina');
+                            if (txtPagina) txtPagina.textContent = `Página ${pagina}`;
+
+                            const btnAnt = document.getElementById('btnAnt');
+                            if (btnAnt) btnAnt.disabled = (pagina <= 1);
+
+                            const btnSig = document.getElementById('btnSig');
+                            if (btnSig) btnSig.disabled = (tickets.length < tamano);
+                        });
+                }
+
+                const selectFiltro = document.getElementById('filtro');
+                if (selectFiltro) {
+                    selectFiltro.onchange = () => {
+                        pagina = 1;
+                        cargar();
+                    };
+                }
+
+                const btnAnterior = document.getElementById('btnAnt');
+                if (btnAnterior) {
+                    btnAnterior.onclick = () => {
+                        if (pagina > 1) {
+                            pagina--;
+                            cargar();
+                        }
+                    };
+                }
+
+                const btnSiguiente = document.getElementById('btnSig');
+                if (btnSiguiente) {
+                    btnSiguiente.onclick = () => {
+                        pagina++;
+                        cargar();
+                    };
+                }
+
+                cargar();
+    </script>
+</body>
+</html>
